@@ -31,5 +31,3 @@ npm start
 ```
 
 The frontend server will be listening on port 8080.
-
-If you are using Node.js v18 and encountered `Error: error:0308010C:digital envelope routines::unsupported`, follow https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported.
