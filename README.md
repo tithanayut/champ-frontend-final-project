@@ -1,3 +1,7 @@
+Hosted demo is available at [champ-swe-final-project-frontend.pages.dev](https://champ-swe-final-project-frontend.pages.dev)
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Running this project
