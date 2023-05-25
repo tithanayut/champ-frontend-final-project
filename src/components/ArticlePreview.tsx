@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Article } from "types/article";
 import FavoriteButton from "./FavoriteButton";
 
@@ -23,13 +24,13 @@ export default function ArticlePreview(props: ArticlePreviewProps) {
   return (
     <div className="article-preview">
       <div className="article-meta">
-        <a href={`/#/profile/${username}`}>
+        <Link to={`/profile/${username}`}>
           <img src={image || "placeholder.png"} />
-        </a>
+        </Link>
         <div className="info">
-          <a href={`/#/profile/${username}`} className="author">
+          <Link to={`/profile/${username}`} className="author">
             {username}
-          </a>
+          </Link>
           <span className="date">
             {!isNaN(date.getTime()) ? date.toLocaleDateString("en-US", { dateStyle: "long" }) : "Unknown"}
           </span>
@@ -37,12 +38,12 @@ export default function ArticlePreview(props: ArticlePreviewProps) {
         <FavoriteButton varient="short" slug={slug} favoritesCount={favoritesCount} favorited={favorited} />
       </div>
 
-      <a href={`/#/${slug}`} style={{ textDecoration: "none" }}>
+      <Link to={`/${slug}`} style={{ textDecoration: "none" }}>
         <h2 className="h4" style={{ fontWeight: 600, color: "#373A3C" }}>
           {title}
         </h2>
         <p className="text-muted">{description}</p>
-      </a>
+      </Link>
     </div>
   );
 }

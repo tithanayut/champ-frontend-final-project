@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { useGetArticleQuery } from "store/api/article";
 import FavoriteButton from "components/FavoriteButton";
@@ -31,13 +31,13 @@ export default function Article() {
           <h1>{title}</h1>
 
           <div className="article-meta">
-            <a href={`/#/profile/${username}`}>
+            <Link to={`/profile/${username}`}>
               <img src={image || "/placeholder.png"} />
-            </a>
+            </Link>
             <div className="info">
-              <a href={`/#/profile/${username}`} className="author">
+              <Link to={`/profile/${username}`} className="author">
                 {username}
-              </a>
+              </Link>
               <span className="date">
                 {!isNaN(date.getTime()) ? date.toLocaleDateString("en-US", { dateStyle: "long" }) : "Unknown"}
               </span>
@@ -60,13 +60,13 @@ export default function Article() {
 
         <div className="article-actions">
           <div className="article-meta">
-            <a href={`/#/profile/${username}`}>
+            <Link to={`/profile/${username}`}>
               <img src={image || "/placeholder.png"} />
-            </a>
+            </Link>
             <div className="info">
-              <a href={`/#/profile/${username}`} className="author">
+              <Link to={`/profile/${username}`} className="author">
                 {username}
-              </a>
+              </Link>
               <span className="date">
                 {!isNaN(date.getTime()) ? date.toLocaleDateString("en-US", { dateStyle: "long" }) : "Unknown"}
               </span>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useTypedSelector } from "store/store";
 
 export default function NavBar() {
@@ -9,36 +10,36 @@ export default function NavBar() {
   return (
     <nav className="navbar navbar-light">
       <div className="container">
-        <a className="navbar-brand" href="/#">
+        <Link to="/" className="navbar-brand">
           conduit
-        </a>
+        </Link>
         <ul className="nav navbar-nav pull-xs-right">
           <li className="nav-item">
-            <a className="nav-link" href="/#">
+            <Link to="/" className="nav-link">
               Home
-            </a>
+            </Link>
           </li>
           {!isAuthenticated ? (
             <li className="nav-item">
-              <a className="nav-link" href="/#/login">
+              <Link to="/login" className="nav-link">
                 Sign in
-              </a>
+              </Link>
             </li>
           ) : (
             <>
               <li className="nav-item">
-                <a className="nav-link" href="/#/logout">
+                <Link to="/logout" className="nav-link">
                   Logout
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href={`#/profile/${user && user.username}`}>
+                <Link to={`/profile/${user && user.username}`} className="nav-link">
                   <img
                     style={{ height: "26px", borderRadius: "50px", float: "left", marginRight: "5px" }}
                     src={user && user.image ? user.image : "/placeholder.png"}
                   />
                   {user && user.username}
-                </a>
+                </Link>
               </li>
             </>
           )}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useGetTagsQuery } from "store/api/tag";
 
 export default function TagList() {
@@ -12,9 +13,9 @@ export default function TagList() {
       <div className="tag-list">
         {data &&
           data.tags.map(tag => (
-            <a key={tag} href="" className="tag-pill tag-default">
+            <Link to="/" key={tag} className="tag-pill tag-default">
               {tag}
-            </a>
+            </Link>
           ))}
       </div>
     </div>
